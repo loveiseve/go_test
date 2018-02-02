@@ -3,9 +3,14 @@ import "fmt"
 
 func main() {
 	a := 1
-	fmt.Println("hello")
 	b := "hello, world"
 
-	fmt.Println("num is :%v", a)
-	fmt.Println("string is %v", b)
+	go func() {
+		fmt.Println("In goroutine")
+		t := "xiayi"
+		fmt.Println("name is %s", t)
+	}()
+
+	fmt.Println("num is :%d", a)
+	fmt.Println("string is %s", b)
 }
